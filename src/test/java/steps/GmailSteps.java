@@ -51,7 +51,7 @@ public class GmailSteps {
         gmail.login(testUser);
     }
 
-    @Then("User should see account email {string}")
+    @Then("^User should see account email \\\"([^\\\"]*)\\\"$")
     public void user_should_see_account_email(String expectedEmail) {
         boolean isLoggedIn = gmail.isAccountPresent(expectedEmail);
         log.info("Login check: {}", isLoggedIn);
